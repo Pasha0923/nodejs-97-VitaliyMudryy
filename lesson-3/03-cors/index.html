@@ -11,6 +11,8 @@
   <h1>CORS</h1>
 
   <script>
+    // Робимо HTTP запит на наш webserver для того щоб отримати у відповіді список фільмів
+    // метод fetch вбудований у браузер його не потрібно встановлювати як залежність
     fetch("http://localhost:8080/movies")
       .then((response) => response.text())
       .then(data => console.log({ data }))

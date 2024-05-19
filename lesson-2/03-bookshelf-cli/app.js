@@ -1,7 +1,8 @@
 import { program } from "commander";
 
-import Books from "./books/index.js";
-
+import Books from "./books/index.js"; // імпортуємо Books з файлу index.js (Books це об'єкт з його методами)
+// (назва може бути довільною) і обов'язково вказуємо шлях до файлу явно його прописати
+// тому що тут не можна просто вказати шлях до папки як в COMMON JS
 async function invokeAction({ action, id, title, author }) {
   switch (action) {
     case "getAll":

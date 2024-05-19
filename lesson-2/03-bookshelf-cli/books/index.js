@@ -1,15 +1,20 @@
 import * as fs from "node:fs/promises";
 import path from "node:path";
-import crypto from "node:crypto";
+import crypto from "node:crypto"; // модуль crypto для генерування унікального id
 
-const filePath = path.resolve("books", "books.json");
+// У СOMMONJS!
+// const crypto = require("node:crypto");
+console.log(crypto.randomUUID()); // crypto має метод randomUUID() який генерує id шки
+const filePath = path.resolve("books", "books.json"); // модуль path має метод resolve(вказуємо абсолютний шлях)
+console.log("filePath: ", filePath);
 
 async function readBooks() {
+  // функція для зчитування файлу за "books.json" за абсолютним шляхом
   const data = await fs.readFile(filePath, { encoding: "utf-8" });
 
   return JSON.parse(data);
 }
-
+// функція для перезапису  файлу  "books.json"
 async function writeBooks(books) {
   await fs.writeFile(filePath, JSON.stringify(books, undefined, 2));
 }

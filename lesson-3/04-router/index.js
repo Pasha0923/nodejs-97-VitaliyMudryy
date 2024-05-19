@@ -1,7 +1,7 @@
 import express from "express";
 
-import routes from "./routes/index.js";
-
+import routes from "./routes/index.js"; // імпортуємо всі маршhути (router)
+// і зберігаємо іх у змінну routes
 const app = express();
 
 app.use(routes);
